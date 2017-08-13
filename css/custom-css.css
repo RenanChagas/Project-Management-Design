@@ -1256,3 +1256,12 @@ nav ul li a.MDC-navbar-active {
 .MDC-modal-description-size{
   height: 50px !important;
 }
+
+.MDC-maxSize-60perc{
+  max-width: 60%;
+  float: left;
+}
+
+.MDC-maxSize-300{
+  width: 300px;
+}

@@ -1,0 +1,43 @@
+<div class="row MDC-maxSize-80perc">
+  <div class="col s12 file-field input-field">
+    <div class="btn">
+      <span>File</span>
+      <input type="file" multiple>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate MDC-border-grey-light" type="text" placeholder="Upload one or more files">
+    </div>
+  </div>
+</div>
+
+
+<!-- File Upload -->
+<div class="row MDC-margin-bottom2">
+  <div class="file-field input-field col s12">
+    <div class="btn">
+      <span>File</span>
+      <input type="file" multiple>
+    </div>
+    <div class="file-path-wrapper">
+    <input placeholder="Upload one or more files" type="text"
+          class="MDC-border-grey-light MDC-font-18 MDC-color-grey-dark-2
+                MDC-font-weight-300 MDC-maxSize-60perc">
+    </div>
+  </div>
+</div>
+
+
+<input id="datepicker1" placeholder="Due date" type="text"
+      class="datepicker MDC-border-grey-light MDC-font-18 MDC-color-grey-dark-2
+      MDC-font-weight-300 MDC-maxSize-300">
+
+      <!-- Due date -->
+      <div class="row MDC-margin-bottom8 MDC-maxSize-300">
+        <div class="col s12 left">
+          <label for="datepicker1">Due Date</label>
+          <input id="datepicker1" type="text" class="datepicker
+                    MDC-border-grey-light MDC-font-18 MDC-color-grey-dark-2
+                    MDC-font-weight-300">
+
+        </div>
+      </div>
