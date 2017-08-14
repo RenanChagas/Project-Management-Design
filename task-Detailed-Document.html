@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Course Management</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/custom-css.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/menu.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('select').material_select();
+      $('selectCagory').material_select();
+
+      $('.chips').material_chip();
+
+
+      $('.chips-placeholder').material_chip({
+        placeholder: 'Enter a tag',
+        secondaryPlaceholder: 'Enter a tag',
+      });
+
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+      });
+
+    });
+  </script>
+
+</head>
+<body>
+
+  <!-- NAV TOP  -->
+  <nav id="logo_nav" class="MDC-navbar-style MDC-shadow-0 hide-on-small-and-down">
+    <div class="nav-wrapper MDC-nav-margin">
+      <div class="row MDC-nav-top-container ">
+
+        <!-- Logo -->
+        <div class="col s12 m3 l2">
+          <div class="MDC-nav-logo-position">
+            <img src="images/default/logo.png" class="MDC-nav-logo-size"/>
+          </div>
+        </div>
+
+        <!-- Search -->
+        <div class="col s12 m7 l7">
+          <div class="MDC-nav-search-position">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" class="MDC-nav-search-focus" required>
+                <label class="label-icon" for="search"><i class="material-icons MDC-nav-search-focus">search</i></label>
+                  <i class="material-icons MDC-nav-search-focus">close</i>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Avatar -->
+        <div class="col s12 m2 l3">
+          <div class="MDC-nav-account-position">
+            <!-- Dropdown Trigger -->
+            <a class="dropdown-button " data-beloworigin="true"
+               href='#' data-activates='account-dropdown'>
+               <div class="MDC-nav-account-option-position hide-on-med-and-down">
+                 <i class="material-icons MDC-icon-small MDC-color-grey-light">expand_more</i>
+               </div>
+               <span class="MDC-login-text MDC-nav-account-text-position
+                            MDC-color-grey-light hide-on-med-and-down">
+                 renanchagasw
+               </span>
+               <img src="images/temp/man-profile-circle-3.png" class="MDC-avatar-circle-small mdc-nav-avatar-position"/>
+            </a>
+            <!-- Dropdown Structure -->
+            <ul id='account-dropdown' class='dropdown-content MDC-nav-account-dropdown-position'>
+              <li><a id="profile" class="modal-trigger MDC-color-grey-dark-2 MDC-font-15" href="profile">Profile</a></li>
+              <li><a class="MDC-color-grey-dark-2 MDC-font-15" href="#!">Report a Problem</a></li>
+              <li class="divider"></li>
+              <li><a class="MDC-color-grey-dark-2 MDC-font-15" href="logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- NAV MENU  -->
+  <div class="MDC-menu-fullWidth">
+    <div class="MDC-shadow-bottom">
+      <header class="MDC-shadow-bottom">
+        <nav id="menu_nav" class="MDC-navbar-menu-size MDC-navbar-style MDC-shadow-0 MDC-nav-margin">
+          <div class="nav-wrapper MDC-nav-margin MDC-left">
+            <!-- MENU ROW -->
+            <div class="row">
+              <div class="col">
+                <div class="MDC-nav-menu-container">
+
+                  <ul id="nav-mobile" class="MDC-nav-menu-ul left left-align">
+                    <a href="#" id="mobile-icon" onclick="openNav()" class="left MDC-padding-mobile-0
+                    MDC-hover-none">
+                      <i class="material-icons MDC-nav-tabs-icon MDC-color-grey-light">
+                        menu
+                      </i>
+                    </a>
+                    <li class="MDC-navbar-menu"><a href="#!">My Dashboard</a></li>
+                    <li class="MDC-navbar-menu"><a class="active MDC-navbar-active" href="#!">Projects</a></li>
+                    <li class="MDC-navbar-menu"><a href="#!">My Tasks</a></li>
+                    <li class="MDC-navbar-menu"><a href="#!">News</a></li>
+                  </ul>
+                  <div id="mySidenav" class="MDC-sidenav">
+                    <a href="javascript:void(0)" class="MDC-closebtn" onclick="closeNav()">x</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Clients</a>
+                    <a href="#">Contact</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- MENU ROW - END -->
+          </div>
+        </nav>
+      </header>
+    </div>
+  </div>
+  <!-- NAV MENU - END -->
+
+  <!-- NEWS ADD -->
+
+  <!-- TITLE PAGE -->
+  <div class="row  MDC-page-center MDC-page-container">
+    <div class="col MDC-padding-0 left">
+      <div class="MDC-page-title-size">
+        <font class="MDC-h5-style MDC-color-grey-dark-2 MDC-display-inline">Projeto Teste</font>
+        <font class="MDC-h5-style MDC-color-grey-light-2 MDC-display-inline MDC-relative
+                     MDC-news-counterBar-position">/
+        </font>
+        <font class="MDC-h5-style MDC-color-grey-dark-2 MDC-display-inline">Tasks</font>
+        <font class="MDC-h5-style MDC-color-grey-light-2 MDC-display-inline MDC-relative
+                     MDC-news-counterBar-position">/
+        </font>
+        <font class="MDC-h5-style MDC-color-blue MDC-display-inline">Overview</font>
+        <i class="material-icons MDC-icon-small MDC-color-blue
+                  MDC-news-expand-icon-position MDC-relative">expand_more</i>
+
+      </div>
+    </div>
+  </div>
+  <!-- TITLE PAGE - END -->
+
+  <!-- CONTAINER-->
+  <div class="MDC-page-center MDC-page-container MDC-margin-top20">
+    <div class="row MDC-float-none">
+      <!-- CONTEUDO -->
+      <div class="col l10 MDC-padding-0 MDC-page-center MDC-float-none">
+
+        <!-- TABS -->
+        <ul id="tabs-swipe" class="tabs">
+          <li class="tab col s4 MDC-background-color MDC-display-flex">
+            <a class="active MDC-color-grey-dark-2 breadcrumb" href="#overview-tab">Overview</a>
+          </li>
+          <li class="tab col s4 MDC-background-color MDC-display-flex">
+            <a class="MDC-color-grey-dark-2 breadcrumb" href="#finish-tab">Finish Task</a>
+          </li>
+          <li class="tab col s4 MDC-background-color MDC-display-flex">
+            <a class="MDC-color-grey-dark-2 breadcrumb" href="#history-tab">History</a>
+          </li>
+        </ul>
+        <!-- TABS-END -->
+
+        <!-- OVERVIEW -->
+        <div id="overview-tab" class="col s12 MDC-card">
+          <div class="MDC-card-news-container">
+
+            <!-- User Information -->
+            <div class="row MDC-margin-bottom2">
+              <div class="MDC-card-news-user-row">
+                <img src="images/temp/man-profile-circle-3.png" class="right MDC-avatar-circle-small"/>
+                <div class="left MDC-font-12 MDC-color-grey MDC-margin-top10">4 days ago</div>
+              </div>
+            </div>
+
+            <!-- Title -->
+            <div class="row MDC-margin-bottom40 center">
+              <font class="MDC-font-40 MDC-font-bold MDC-color-grey-dark-2">DESCRIPTION</font>
+            </div>
+
+            <!-- Description -->
+            <div class="row MDC-margin-bottom40">
+
+                <font class="MDC-font-18 MDC-color-black MDC-font-weight-300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida tristique sapien,
+                    et molestie tortor sagittis ac. Vivamus accumsan ante mauris, eu lobortis ex rhoncus eget.
+                    <br><br>
+                    Praesent erat nisl, varius nec commodo eu, egestas pharetra metus.
+                    Etiam a congue ex. Morbi tincidunt, dolor sollicitudin finibus auctor, erat erat pharetra sapien,
+                    vitae placerat lacus arcu nec ipsum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida tristique sapien, et
+                    molestie tortor sagittis ac. Vivamus accumsan ante mauris, eu lobortis ex rhoncus eget.
+                    <br><br>
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                    Vivamus tellus neque, aliquam rhoncus erat eu, rhoncus malesuada nibh. Suspendisse ac facilisis leo.
+                    Donec accumsan elit elit, sit amet hendrerit elit lobortis non. Fusce tincidunt tincidunt orci id dictum. Suspendisse
+                    vestibulum bibendum lorem. Nulla nec ornare ante. Morbi quis orci in leo rhoncus molestie. Nam bibendum venenatis mi et interdum.
+                    Sed venenatis dolor sapien, ac rutrum enim semper eget. Donec viverra augue at fermentum lobortis. Sed vitae congue dolor.
+                    Suspendisse lacinia quis tellus sit amet consequat.
+                    <br><br>
+                    Suspendisse faucibus tellus vitae nibh consectetur, ac lobortis eros sollicitudin. Praesent molestie,
+                    lorem nec vestibulum aliquam, nunc odio blandit quam, id aliquet arcu ipsum nec ligula. Suspendisse potenti.
+                    Sed at dolor interdum, lacinia tortor ac, fringilla ligula. Aliquam erat volutpat. Pellentesque habitant morbi
+                    tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus urna nunc, vehicula ac nulla eu,
+                    posuere aliquam turpis. Quisque iaculis tortor eget erat pulvinar placerat. In in tellus placerat ante sodales
+                    sodales. Nulla facilisi. Vivamus porta pretium turpis, eu egestas mi tristique vitae. Etiam in dapibus nunc.
+                    Praesent consectetur, ante sed viverra tempor, turpis metus ultrices augue, nec varius lectus tortor sit amet nisl.
+                    In laoreet imperdiet dolor, a vestibulum purus tincidunt ut.
+                    <br><br>
+                    Duis ut semper ante. Curabitur sit amet justo tempus, gravida est quis, viverra ex.
+                    Praesent cursus dapibus nibh in lacinia. Maecenas hendrerit, massa non congue viverra, velit magna dictum purus,
+                    sodales lobortis diam sapien posuere leo. Nunc commodo orci nec ipsum euismod porttitor.
+                    Cras dictum odio egestas mauris suscipit fermentum. Cras sollicitudin, justo in rhoncus dignissim,
+                    libero metus varius diam, quis dapibus urna enim vitae nunc. Proin lobortis vitae massa vel viverra.
+                    Cras quis odio at ligula mollis posuere quis sed magna. Maecenas pellentesque in est et lobortis.
+                    Praesent imperdiet lorem augue, non vestibulum eros blandit maximus. Integer at leo non augue molestie sagittis.
+                </font>
+
+            </div>
+            <!-- Description-END -->
+
+            <!-- Title -->
+            <div class="row MDC-margin-bottom40 center">
+              <font class="MDC-font-40 MDC-font-bold MDC-color-grey-dark-2">LINKS</font>
+            </div>
+
+            <!-- Links -->
+            <div class="row MDC-margin-bottom40">
+              s
+            </div>
+
+            <!-- Title -->
+            <div class="row MDC-margin-bottom40 center">
+              <font class="MDC-font-40 MDC-font-bold MDC-color-grey-dark-2">DUE DATE</font>
+            </div>
+
+            <!-- DUE DATE -->
+            <div class="row ">
+              <div class="row ">
+                  <div class="col MDC-maxSize-300">
+                    <label for="datepicker1">Due Date</label>
+                    <input id="datepicker1" type="text" class="
+                              MDC-border-grey-light MDC-font-18 MDC-color-grey-dark-2
+                              MDC-font-weight-300"
+                              value="1 August 2017" disabled>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- OVERVIEW-END -->
+
+      </div>
+    </div>
+  </div>
+  <!-- CONTAINER - END -->
+
+</body>
+</html>
