@@ -36,6 +36,8 @@
         close: 'Ok',
         closeOnSelect: false // Close upon selecting a date,
       });
+        
+      $('#textareaOverview').trigger('autoresize');    
 
     });
   </script>
@@ -184,7 +186,9 @@
         <!-- TABS-END -->
 
         <!-- OVERVIEW -->
-        <div id="overview-tab" class="col s12 MDC-card">
+        <div id="overview-tab">
+        <div class="col s12 MDC-card">
+            
           <div class="MDC-card-news-container">
 
             <!-- User Information -->
@@ -199,62 +203,64 @@
             <div class="row MDC-margin-bottom40 center">
               <font class="MDC-font-40 MDC-font-bold MDC-color-grey-dark-2">DESCRIPTION</font>
             </div>
-
+            
+            <!-- FORM -->
+            <form id="overview-form" method="POST" modelAttribute="news" class="form-horizontal">
             <!-- Description -->
-            <div class="row MDC-margin-bottom40">
+            <div class="row">
+                
+                    <!-- Description -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textareaOverview" disabled placeholder="Tell the content here..." class="materialize-textarea MDC-border-grey-light MDC-font-18 MDC-color-black MDC-font-weight-300">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat cursus magna. Morbi hendrerit quis purus non gravida. Cras lacinia erat et facilisis tristique. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec fringilla risus condimentum diam sodales dictum. Proin ullamcorper mattis convallis. Donec consequat augue condimentum erat fringilla accumsan. Nullam finibus posuere ex, faucibus interdum odio ornare non. Curabitur sit amet auctor enim, et vulputate augue. Mauris eu dolor purus.
 
-                <font class="MDC-font-18 MDC-color-black MDC-font-weight-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida tristique sapien,
-                    et molestie tortor sagittis ac. Vivamus accumsan ante mauris, eu lobortis ex rhoncus eget.
-                    <br><br>
-                    Praesent erat nisl, varius nec commodo eu, egestas pharetra metus.
-                    Etiam a congue ex. Morbi tincidunt, dolor sollicitudin finibus auctor, erat erat pharetra sapien,
-                    vitae placerat lacus arcu nec ipsum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida tristique sapien, et
-                    molestie tortor sagittis ac. Vivamus accumsan ante mauris, eu lobortis ex rhoncus eget.
-                    <br><br>
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                    Vivamus tellus neque, aliquam rhoncus erat eu, rhoncus malesuada nibh. Suspendisse ac facilisis leo.
-                    Donec accumsan elit elit, sit amet hendrerit elit lobortis non. Fusce tincidunt tincidunt orci id dictum. Suspendisse
-                    vestibulum bibendum lorem. Nulla nec ornare ante. Morbi quis orci in leo rhoncus molestie. Nam bibendum venenatis mi et interdum.
-                    Sed venenatis dolor sapien, ac rutrum enim semper eget. Donec viverra augue at fermentum lobortis. Sed vitae congue dolor.
-                    Suspendisse lacinia quis tellus sit amet consequat.
-                    <br><br>
-                    Suspendisse faucibus tellus vitae nibh consectetur, ac lobortis eros sollicitudin. Praesent molestie,
-                    lorem nec vestibulum aliquam, nunc odio blandit quam, id aliquet arcu ipsum nec ligula. Suspendisse potenti.
-                    Sed at dolor interdum, lacinia tortor ac, fringilla ligula. Aliquam erat volutpat. Pellentesque habitant morbi
-                    tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus urna nunc, vehicula ac nulla eu,
-                    posuere aliquam turpis. Quisque iaculis tortor eget erat pulvinar placerat. In in tellus placerat ante sodales
-                    sodales. Nulla facilisi. Vivamus porta pretium turpis, eu egestas mi tristique vitae. Etiam in dapibus nunc.
-                    Praesent consectetur, ante sed viverra tempor, turpis metus ultrices augue, nec varius lectus tortor sit amet nisl.
-                    In laoreet imperdiet dolor, a vestibulum purus tincidunt ut.
-                    <br><br>
-                    Duis ut semper ante. Curabitur sit amet justo tempus, gravida est quis, viverra ex.
-                    Praesent cursus dapibus nibh in lacinia. Maecenas hendrerit, massa non congue viverra, velit magna dictum purus,
-                    sodales lobortis diam sapien posuere leo. Nunc commodo orci nec ipsum euismod porttitor.
-                    Cras dictum odio egestas mauris suscipit fermentum. Cras sollicitudin, justo in rhoncus dignissim,
-                    libero metus varius diam, quis dapibus urna enim vitae nunc. Proin lobortis vitae massa vel viverra.
-                    Cras quis odio at ligula mollis posuere quis sed magna. Maecenas pellentesque in est et lobortis.
-                    Praesent imperdiet lorem augue, non vestibulum eros blandit maximus. Integer at leo non augue molestie sagittis.
-                </font>
+Maecenas fermentum nisl vitae urna pretium egestas. Suspendisse accumsan fermentum imperdiet. Maecenas ornare purus quis dui ornare mollis. Fusce auctor, tellus quis scelerisque semper, enim est tincidunt neque, vel luctus felis quam eu tortor. Praesent vitae vulputate nunc, nec eleifend justo. Quisque ultrices consectetur metus, eget efficitur sapien imperdiet sed. Sed sed nisi arcu. Curabitur in leo sed ipsum volutpat aliquet eu fringilla libero. Curabitur dapibus quis neque sed varius. Donec sollicitudin diam nec laoreet pharetra.
+
+Suspendisse vulputate commodo erat. Sed maximus felis nec nisl posuere laoreet. Curabitur eget accumsan risus, a condimentum nunc. Vestibulum suscipit nisi dictum dui rhoncus, sit amet finibus ante semper. Quisque dolor nisi, aliquam quis risus eu, venenatis sodales nulla. Aenean ornare efficitur est at maximus. Aenean maximus massa nisi, quis blandit justo malesuada quis. Mauris eu tempor enim. Suspendisse sed nisi lectus.
+
+Aliquam ut eros risus. Praesent et nisi et lacus dapibus pulvinar eu quis nibh. Sed ac convallis justo. Quisque eget interdum nulla. Maecenas non pellentesque lectus. In lectus nibh, mattis nec risus at, convallis efficitur lacus. Sed in sagittis metus. Sed facilisis enim at eleifend pharetra. Cras nec condimentum tellus. Nullam sit amet massa ante. Mauris quis diam quis mi tincidunt varius. Cras id urna ut eros sollicitudin lobortis non ac quam. Duis consequat venenatis congue.
+                            </textarea>
+                            <label for="textarea1">Content</label>
+                        </div>
+                    </div>
+                    
+                    <!-- File Upload -->
+                    <div id="fileUpload" class="file-field input-field MDC-margin-bottom40 MDC-margin-left10"  style="display: none;" >
+                      <div class="btn waves-light blue MDC-form-text">
+                        <span>File</span>
+                        <input type="file" multiple>
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate MDC-border-grey-light MDC-font-18 MDC-color-grey-dark-2
+                                      MDC-font-weight-300 MDC-maxSize-60perc"
+                              type="text" placeholder="Upload one or more files">
+                      </div>
+                    </div>
+                
 
             </div>
             <!-- Description-END -->
 
-            <!-- Title -->
-            <div class="row MDC-margin-bottom40 center">
-              <font class="MDC-font-40 MDC-font-bold MDC-color-grey-dark-2">LINKS</font>
-            </div>
+            
 
             <!-- Links -->
             <div class="row MDC-margin-bottom40">
-              s
+                <a href="#">
+                    <div class="chip MDC-background-blue MDC-white-text">
+                        teste.pdf
+                        <i class="close material-icons">insert_drive_file</i>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="chip MDC-background-blue MDC-white-text">
+                        overview.doc
+                        <i class="close material-icons">insert_drive_file</i>
+                    </div>
+                </a>
             </div>
 
-            <!-- Title -->
-            <div class="row MDC-margin-bottom40 center">
-              <font class="MDC-font-40 MDC-font-bold MDC-color-grey-dark-2">DUE DATE</font>
-            </div>
+           
 
             <!-- DUE DATE -->
             <div class="row ">
@@ -268,12 +274,95 @@
                 </div>
               </div>
             </div>
-
+                
+          </form>
+          <!-- FORM - END --> 
           </div>
+            
+        </div>
+            <button id="salvar" type="submit" 
+                    class="btn waves-effect waves-light
+                    blue MDC-form-text right" name="action">
+            Editar
+            </button>
+            <button id="salvar" type="submit" 
+                    class="btn waves-effect waves-light
+                    red MDC-form-text left" name="action">
+            Excluir
+            </button>
         </div>
         <!-- OVERVIEW-END -->
+          
+        <!-- FINISH -->
+        <div id="finish-tab">
+            <div class="col s12 MDC-card">
+                <!-- CARD CONTAINER -->
+                <div class="MDC-card-news-container">
+                    
+                    <!-- User Information -->
+                    <div class="row MDC-margin-bottom2">
+                      <div class="MDC-card-news-user-row">
 
+                        <div class="left MDC-font-12 MDC-color-grey MDC-margin-top10"></div>
+                        <div class="left MDC-font-12 MDC-color-grey MDC-margin-5 MDC-margin-top10"></div>
+                        <div class="left MDC-font-12 MDC-color-grey MDC-margin-top10"></div>
+                      </div>
+                    </div>
+                    
+                    <!-- FORM -->
+                    <form id="finish-form" method="POST" modelAttribute="news" class="form-horizontal">
+                        <!-- Description -->
+                        <div class="row MDC-margin-bottom40">
+                          <div class="input-field col s12">
+                            <textarea id="textarea1" placeholder="Tell the content here..." class="materialize-textarea MDC-border-grey-light MDC-font-18 MDC-color-black MDC-font-weight-300"></textarea>
+                            <label for="textarea1">Content</label>
+                          </div>
+                        </div>
+                        
+                        <!-- File Upload -->
+                        <div class="file-field input-field MDC-margin-bottom40 MDC-margin-left10">
+                          <div class="btn waves-light blue MDC-form-text">
+                            <span>File</span>
+                            <input type="file" multiple>
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate MDC-border-grey-light MDC-font-18 MDC-color-grey-dark-2
+                                          MDC-font-weight-300 MDC-maxSize-60perc"
+                                  type="text" placeholder="Upload one or more files">
+                          </div>
+                        </div>
+                        
+                        <!-- DUE DATE -->
+                        <div class="row ">
+                          <div class="row ">
+                              <div class="col MDC-maxSize-300">
+                                <label for="datepicker2">Completed</label>
+                                <input id="datepicker2" type="text" class="
+                                          MDC-border-grey-light MDC-font-18 MDC-color-grey-dark-2
+                                          MDC-font-weight-300"
+                                          value="14 August 2017" disabled>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                    <!-- FORM - END -->
+                    
+                </div>
+                <!-- CARD CONTAINER - END-->
+            </div>
+            <button id="salvar" type="submit" 
+                    class="btn waves-effect waves-light
+                    blue MDC-form-text right" name="action">
+                Finalizar
+            </button>
+        </div>  
+        <!-- FINISH - END-->
+          
+          
+          
+          
       </div>
+      <!-- CONTEUDO - END -->    
     </div>
   </div>
   <!-- CONTAINER - END -->

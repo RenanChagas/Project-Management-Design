@@ -885,6 +885,10 @@ nav ul li a.MDC-navbar-active {
   color: #000 !important;
 }
 
+.MDC-white-text {
+  color: #ffffff !important;
+}
+
 /*-------------------------------------------------*/
 /* IMAGE - STYLE                                    */
 /*-------------------------------------------------*/
