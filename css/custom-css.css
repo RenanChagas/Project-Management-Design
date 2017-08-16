@@ -1102,6 +1102,11 @@ nav ul li a.MDC-navbar-active {
   }
 }
 
+
+.MDC-notification-badge-style{
+  line-height: 24px !important;
+}
+
 /*-------------------------------------------------*/
 /* DASHBOARD - PAGE                                */
 /*-------------------------------------------------*/
