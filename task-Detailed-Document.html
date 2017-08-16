@@ -36,8 +36,8 @@
         close: 'Ok',
         closeOnSelect: false // Close upon selecting a date,
       });
-        
-      $('#textareaOverview').trigger('autoresize');    
+
+      $('#textareaOverview').trigger('autoresize');
 
     });
   </script>
@@ -172,7 +172,7 @@
       <div class="col l10 MDC-padding-0 MDC-page-center MDC-float-none">
 
         <!-- TABS -->
-        <ul id="tabs-swipe" class="tabs">
+        <ul id="tabs-swipe" class="tabs MDC-tabs-style">
           <li class="tab col s4 MDC-background-color MDC-display-flex">
             <a class="active MDC-color-grey-dark-2 breadcrumb" href="#overview-tab">Overview</a>
           </li>
@@ -188,7 +188,7 @@
         <!-- OVERVIEW -->
         <div id="overview-tab">
         <div class="col s12 MDC-card">
-            
+
           <div class="MDC-card-news-container">
 
             <!-- User Information -->
@@ -203,12 +203,12 @@
             <div class="row MDC-margin-bottom40 center">
               <font class="MDC-font-40 MDC-font-bold MDC-color-grey-dark-2">DESCRIPTION</font>
             </div>
-            
+
             <!-- FORM -->
             <form id="overview-form" method="POST" modelAttribute="news" class="form-horizontal">
             <!-- Description -->
             <div class="row">
-                
+
                     <!-- Description -->
                     <div class="row">
                         <div class="input-field col s12">
@@ -224,7 +224,7 @@ Aliquam ut eros risus. Praesent et nisi et lacus dapibus pulvinar eu quis nibh. 
                             <label for="textarea1">Content</label>
                         </div>
                     </div>
-                    
+
                     <!-- File Upload -->
                     <div id="fileUpload" class="file-field input-field MDC-margin-bottom40 MDC-margin-left10"  style="display: none;" >
                       <div class="btn waves-light blue MDC-form-text">
@@ -237,12 +237,12 @@ Aliquam ut eros risus. Praesent et nisi et lacus dapibus pulvinar eu quis nibh. 
                               type="text" placeholder="Upload one or more files">
                       </div>
                     </div>
-                
+
 
             </div>
             <!-- Description-END -->
 
-            
+
 
             <!-- Links -->
             <div class="row MDC-margin-bottom40">
@@ -260,7 +260,7 @@ Aliquam ut eros risus. Praesent et nisi et lacus dapibus pulvinar eu quis nibh. 
                 </a>
             </div>
 
-           
+
 
             <!-- DUE DATE -->
             <div class="row ">
@@ -274,31 +274,31 @@ Aliquam ut eros risus. Praesent et nisi et lacus dapibus pulvinar eu quis nibh. 
                 </div>
               </div>
             </div>
-                
+
           </form>
-          <!-- FORM - END --> 
+          <!-- FORM - END -->
           </div>
-            
+
         </div>
-            <button id="salvar" type="submit" 
+            <button id="salvar" type="submit"
                     class="btn waves-effect waves-light
                     blue MDC-form-text right" name="action">
             Editar
             </button>
-            <button id="salvar" type="submit" 
+            <button id="salvar" type="submit"
                     class="btn waves-effect waves-light
                     red MDC-form-text left" name="action">
             Excluir
             </button>
         </div>
         <!-- OVERVIEW-END -->
-          
+
         <!-- FINISH -->
         <div id="finish-tab">
             <div class="col s12 MDC-card">
                 <!-- CARD CONTAINER -->
                 <div class="MDC-card-news-container">
-                    
+
                     <!-- User Information -->
                     <div class="row MDC-margin-bottom2">
                       <div class="MDC-card-news-user-row">
@@ -308,7 +308,7 @@ Aliquam ut eros risus. Praesent et nisi et lacus dapibus pulvinar eu quis nibh. 
                         <div class="left MDC-font-12 MDC-color-grey MDC-margin-top10"></div>
                       </div>
                     </div>
-                    
+
                     <!-- FORM -->
                     <form id="finish-form" method="POST" modelAttribute="news" class="form-horizontal">
                         <!-- Description -->
@@ -318,7 +318,7 @@ Aliquam ut eros risus. Praesent et nisi et lacus dapibus pulvinar eu quis nibh. 
                             <label for="textarea1">Content</label>
                           </div>
                         </div>
-                        
+
                         <!-- File Upload -->
                         <div class="file-field input-field MDC-margin-bottom40 MDC-margin-left10">
                           <div class="btn waves-light blue MDC-form-text">
@@ -331,7 +331,7 @@ Aliquam ut eros risus. Praesent et nisi et lacus dapibus pulvinar eu quis nibh. 
                                   type="text" placeholder="Upload one or more files">
                           </div>
                         </div>
-                        
+
                         <!-- DUE DATE -->
                         <div class="row ">
                           <div class="row ">
@@ -346,23 +346,79 @@ Aliquam ut eros risus. Praesent et nisi et lacus dapibus pulvinar eu quis nibh. 
                         </div>
                     </form>
                     <!-- FORM - END -->
-                    
+
                 </div>
                 <!-- CARD CONTAINER - END-->
             </div>
-            <button id="salvar" type="submit" 
+            <button id="salvar" type="submit"
                     class="btn waves-effect waves-light
                     blue MDC-form-text right" name="action">
                 Finalizar
             </button>
-        </div>  
+        </div>
         <!-- FINISH - END-->
-          
-          
-          
-          
+
+        <!-- History -->
+        <div id="history-tab">
+          <div class="col s12 MDC-card MDC-historyTabs-size">
+
+            <!-- CARD CONTAINER -->
+            <div class="MDC-card-news-container">
+
+              <!-- User Information -->
+              <div class="row MDC-margin-bottom2">
+                <div class="MDC-card-news-user-row">
+
+                  <div class="left MDC-font-12 MDC-color-grey MDC-margin-top10"></div>
+                  <div class="left MDC-font-12 MDC-color-grey MDC-margin-5 MDC-margin-top10"></div>
+                  <div class="left MDC-font-12 MDC-color-grey MDC-margin-top10"></div>
+                </div>
+              </div>
+
+              <!-- Title -->
+              <div class="row MDC-margin-bottom30 center">
+                <font class="MDC-font-26 MDC-font-bold MDC-color-grey-dark-2">Latest changes made to this task</font>
+              </div>
+
+              <!-- TABLE HISTORY -->
+              <div class="row MDC-margin-bottom40">
+                <table class="centered striped">
+                  <thead>
+                    <tr>
+                      <th>Username</th>
+                      <th>Action</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>AlvinCalvin</td>
+                      <td>Edit</td>
+                      <td>16 August 2017</td>
+                    </tr>
+                    <tr>
+                      <td>AlanRafunsen</td>
+                      <td>Edit</td>
+                      <td>13 August 2017</td>
+                    </tr>
+                    <tr>
+                      <td>JonathanCiclano</td>
+                      <td>Create</td>
+                      <td>10 August 2017</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- TABLE HISTORY - END -->
+
+            </div>
+            <!-- CARD CONTAINER END -->
+          </div>
+        </div>
+        <!-- History - END -->
+
       </div>
-      <!-- CONTEUDO - END -->    
+      <!-- CONTEUDO - END -->
     </div>
   </div>
   <!-- CONTAINER - END -->
