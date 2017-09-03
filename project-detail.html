@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Course Management</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/custom-css.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/menu.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('select').material_select();
+      $('selectCagory').material_select();
+
+      $('.chips').material_chip();
+
+
+      $('.chips-placeholder').material_chip({
+        placeholder: 'Enter a tag',
+        secondaryPlaceholder: 'Enter a tag',
+      });
+
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+      });
+
+      $('#textareaOverview').trigger('autoresize');
+
+    });
+  </script>
+
+</head>
+<body>
+
+  <!-- NAV TOP  -->
+  <nav id="logo_nav" class="MDC-navbar-style MDC-shadow-0 hide-on-small-and-down">
+    <div class="nav-wrapper MDC-nav-margin">
+      <div class="row MDC-nav-top-container ">
+
+        <!-- Logo -->
+        <div class="col s12 m3 l2">
+          <div class="MDC-nav-logo-position">
+            <img src="images/default/logo.png" class="MDC-nav-logo-size"/>
+          </div>
+        </div>
+
+        <!-- Search -->
+        <div class="col s12 m7 l7">
+          <div class="MDC-nav-search-position">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" class="MDC-nav-search-focus" required>
+                <label class="label-icon" for="search"><i class="material-icons MDC-nav-search-focus">search</i></label>
+                  <i class="material-icons MDC-nav-search-focus">close</i>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Avatar -->
+        <div class="col s12 m2 l3">
+          <div class="MDC-nav-account-position">
+            <!-- Dropdown Trigger -->
+            <a class="dropdown-button " data-beloworigin="true"
+               href='#' data-activates='account-dropdown'>
+               <div class="MDC-nav-account-option-position hide-on-med-and-down">
+                 <i class="material-icons MDC-icon-small MDC-color-grey-light">expand_more</i>
+               </div>
+               <span class="MDC-login-text MDC-nav-account-text-position
+                            MDC-color-grey-light hide-on-med-and-down">
+                 renanchagasw
+               </span>
+               <img src="images/temp/man-profile-circle-3.png" class="MDC-avatar-circle-small mdc-nav-avatar-position"/>
+            </a>
+            <!-- Dropdown Structure -->
+            <ul id='account-dropdown' class='dropdown-content MDC-nav-account-dropdown-position'>
+              <li><a id="profile" class="modal-trigger MDC-color-grey-dark-2 MDC-font-15" href="profile">Profile</a></li>
+              <li><a class="MDC-color-grey-dark-2 MDC-font-15" href="#!">Report a Problem</a></li>
+              <li class="divider"></li>
+              <li><a class="MDC-color-grey-dark-2 MDC-font-15" href="logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- NAV MENU  -->
+  <div class="MDC-menu-fullWidth">
+    <div class="MDC-shadow-bottom">
+      <header class="MDC-shadow-bottom">
+        <nav id="menu_nav" class="MDC-navbar-menu-size MDC-navbar-style MDC-shadow-0 MDC-nav-margin">
+          <div class="nav-wrapper MDC-nav-margin MDC-left">
+            <!-- MENU ROW -->
+            <div class="row">
+              <div class="col">
+                <div class="MDC-nav-menu-container">
+
+                  <ul id="nav-mobile" class="MDC-nav-menu-ul left left-align">
+                    <a href="#" id="mobile-icon" onclick="openNav()" class="left MDC-padding-mobile-0
+                    MDC-hover-none">
+                      <i class="material-icons MDC-nav-tabs-icon MDC-color-grey-light">
+                        menu
+                      </i>
+                    </a>
+                    <li class="MDC-navbar-menu"><a href="#!">Dashboard</a></li>
+                    <li class="MDC-navbar-menu"><a class="active MDC-navbar-active" href="#!">Projects</a></li>
+                    <li class="MDC-navbar-menu"><a href="#!">My Tasks</a></li>
+                    <li class="MDC-navbar-menu"><a href="#!">Notifications
+                      <span class="new badge MDC-notification-badge-style" data-badge-caption="">
+                        <font class="MDC-font-weight-400">4 NEW</font>
+                      </span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div id="mySidenav" class="MDC-sidenav">
+                    <a href="javascript:void(0)" class="MDC-closebtn" onclick="closeNav()">x</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Clients</a>
+                    <a href="#">Contact</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- MENU ROW - END -->
+          </div>
+        </nav>
+      </header>
+    </div>
+  </div>
+  <!-- NAV MENU - END -->
+
+  <!-- NEWS ADD -->
+
+<!-- TITLE PAGE -->
+<div class="row  MDC-page-center MDC-page-container">
+    <div class="col MDC-padding-0 left">
+        <div class="MDC-page-title-size">
+            <font class="MDC-h5-style MDC-color-grey-dark-2 MDC-display-inline">Projects</font>
+            <font class="MDC-h5-style MDC-color-grey-light-2 MDC-display-inline MDC-relative
+                        MDC-news-counterBar-position">/
+            </font>
+            <font class="MDC-h5-style MDC-color-grey-dark-2 MDC-display-inline">IBM Interface</font>
+            <font class="MDC-h5-style MDC-color-grey-light-2 MDC-display-inline MDC-relative
+                        MDC-news-counterBar-position">/
+            </font>
+            <font class="MDC-h5-style MDC-color-blue MDC-display-inline">Overview</font>
+        </div>
+    </div>
+</div>
+<!-- TITLE PAGE - END -->
+
+<!-- CONTAINER-->
+    <div class="MDC-page-center MDC-page-container MDC-margin-top40">
+        <div class="row MDC-float-none">
+            <!-- CONTEUDO -->
+            <div class="col l10 MDC-padding-0 MDC-page-center MDC-float-none">
+                <!-- TABS -->
+                <ul id="tabs-swipe" class="tabs MDC-tabs-style MDC-background-color">
+                    <li class="tab col s4 MDC-background-color-white MDC-display-flex">
+                        <a class="active MDC-color-grey-dark-2 breadcrumb" href="#overview-tab">Overview</a>
+                    </li>
+                    <li class="tab col s4 MDC-background-color MDC-display-flex">
+                        <a class="MDC-color-grey-dark-2 breadcrumb" href="#chooseIcon-tab">Finish Project</a>
+                    </li>
+                </ul>
+                <!-- TABS-END -->
+                <!-- OVERVIEW TAB -->
+                <div id="overview-tab">
+                    <!-- CARD TAB -->
+                    <div class="col s12 MDC-card">
+                        <div class="MDC-card-news-container">
+                            <!-- FORM -->
+                            <form id="overview-form" method="POST" modelAttribute="news" class="form-horizontal">
+
+                                <!-- User Information -->
+                                <div class="row MDC-margin-bottom2">
+                                  <div class="MDC-card-news-user-row">
+                                    <img src="images/temp/man-profile-circle-3.png" class="right MDC-avatar-circle-small"/>
+                                    <div class="left MDC-font-12 MDC-color-grey MDC-margin-top10">4 days ago</div>
+                                  </div>
+                                </div>
+
+                                <!-- Title -->
+                                <div class="row MDC-margin-bottom40 center">
+                                  <font class="MDC-font-40 MDC-font-bold MDC-color-grey-dark-2">DESCRIPTION</font>
+                                </div>
+
+                                <!-- Description -->
+                                <div class="row MDC-margin-top40">
+                                    <!-- Description -->
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <textarea id="textareaOverview" placeholder="Tell the content here..." class="materialize-textarea MDC-border-grey-light MDC-font-18 MDC-color-black MDC-font-weight-300">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat cursus magna. Morbi hendrerit quis purus non gravida. Cras lacinia erat et facilisis tristique. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec fringilla risus condimentum diam sodales dictum. Proin ullamcorper mattis convallis. Donec consequat augue condimentum erat fringilla accumsan. Nullam finibus posuere ex, faucibus interdum odio ornare non. Curabitur sit amet auctor enim, et vulputate augue. Mauris eu dolor purus.
+
+Maecenas fermentum nisl vitae urna pretium egestas. Suspendisse accumsan fermentum imperdiet. Maecenas ornare purus quis dui ornare mollis. Fusce auctor, tellus quis scelerisque semper, enim est tincidunt neque, vel luctus felis quam eu tortor. Praesent vitae vulputate nunc, nec eleifend justo. Quisque ultrices consectetur metus, eget efficitur sapien imperdiet sed. Sed sed nisi arcu. Curabitur in leo sed ipsum volutpat aliquet eu fringilla libero. Curabitur dapibus quis neque sed varius. Donec sollicitudin diam nec laoreet pharetra.
+
+Suspendisse vulputate commodo erat. Sed maximus felis nec nisl posuere laoreet. Curabitur eget accumsan risus, a condimentum nunc. Vestibulum suscipit nisi dictum dui rhoncus, sit amet finibus ante semper. Quisque dolor nisi, aliquam quis risus eu, venenatis sodales nulla. Aenean ornare efficitur est at maximus. Aenean maximus massa nisi, quis blandit justo malesuada quis. Mauris eu tempor enim. Suspendisse sed nisi lectus.
+
+Aliquam ut eros risus. Praesent et nisi et lacus dapibus pulvinar eu quis nibh. Sed ac convallis justo. Quisque eget interdum nulla. Maecenas non pellentesque lectus. In lectus nibh, mattis nec risus at, convallis efficitur lacus. Sed in sagittis metus. Sed facilisis enim at eleifend pharetra. Cras nec condimentum tellus. Nullam sit amet massa ante. Mauris quis diam quis mi tincidunt varius. Cras id urna ut eros sollicitudin lobortis non ac quam. Duis consequat venenatis congue.
+                                            </textarea>
+                                            <label for="textarea1">Content</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Description-END -->
+                                <!-- File Upload -->
+                                <div class="file-field input-field MDC-margin-bottom40 MDC-margin-left10">
+                                    <div class="btn waves-light blue MDC-form-text">
+                                        <span>File</span>
+                                        <input type="file" multiple>
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate MDC-border-grey-light MDC-font-17 MDC-color-grey-dark-2
+                                                    MDC-font-weight-300 MDC-maxSize-60perc"
+                                                    type="text" placeholder="Upload one or more files">
+                                    </div>
+                                </div>
+                                <!-- File Upload-END-->
+                                <!-- Links -->
+                                <div class="row MDC-margin-bottom40">
+                                    <a href="#">
+                                        <div class="chip MDC-background-blue MDC-white-text">
+                                            teste.pdf
+                                            <i class="close material-icons">insert_drive_file</i>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="chip MDC-background-blue MDC-white-text">
+                                            overview.doc
+                                            <i class="close material-icons">insert_drive_file</i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- Links-END-->
+                                <!-- Due date -->
+                                <div class="row MDC-margin-bottom30">
+                                    <div class="col MDC-maxSize-300">
+                                        <label for="datepicker1">Due Date</label>
+                                            <input id="datepicker1" type="text" class="datepicker
+                                                MDC-border-grey-light MDC-font-17 MDC-color-grey-dark-2 MDC-font-weight-300"
+                                                value="1 August 2017">
+                                    </div>
+                                </div>
+                                <!-- Due date-END-->
+
+                            </form>
+                            <!-- FORM - END -->
+                        </div>
+                    </div>
+                    <!-- CARD TAB-END-->
+                </div>
+                <!-- OVERVIEW TAB-END -->
+
+                <!-- CHOOSE ICON TAB -->
+                <form action="#">
+                <div id="chooseIcon-tab">
+                    <!-- CARD TAB -->
+                    <div class="col s12 MDC-card">
+                        <!-- CARD CONTAINER -->
+                        <div class="MDC-card-news-container">
+                            <!-- User Information -->
+                            <div class="row MDC-margin-bottom2">
+                                <div class="MDC-card-news-user-row">
+                                    <div class="left MDC-font-12 MDC-color-grey MDC-margin-top10"></div>
+                                    <div class="left MDC-font-12 MDC-color-grey MDC-margin-5 MDC-margin-top10"></div>
+                                    <div class="left MDC-font-12 MDC-color-grey MDC-margin-top10"></div>
+                                </div>
+                            </div>
+
+                            <!-- FORM -->
+                            <form id="finish-form" method="POST" modelAttribute="news" class="form-horizontal">
+                                <!-- Description -->
+                                <div class="row MDC-margin-bottom40">
+                                    <div class="input-field col s12">
+                                        <textarea id="textarea1" placeholder="Tell the content here..." class="materialize-textarea MDC-border-grey-light MDC-font-17 MDC-color-black MDC-font-weight-300"></textarea>
+                                        <label for="textarea1">Content</label>
+                                    </div>
+                                </div>
+
+                                <!-- File Upload -->
+                                <div class="file-field input-field MDC-margin-bottom40 MDC-margin-left10">
+                                    <div class="btn waves-light blue MDC-form-text">
+                                        <span>File</span>
+                                        <input type="file" multiple>
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate MDC-border-grey-light MDC-font-17 MDC-color-grey-dark-2
+                                            MDC-font-weight-300 MDC-maxSize-60perc"
+                                            type="text" placeholder="Upload one or more files">
+                                    </div>
+                                </div>
+
+                                <!-- Due date -->
+                                <div class="row MDC-margin-bottom30">
+                                    <div class="col MDC-maxSize-300">
+                                        <label for="datepicker1">Due Date</label>
+                                            <input id="datepicker1" type="text" class="datepicker
+                                                MDC-border-grey-light MDC-font-17 MDC-color-grey-dark-2 MDC-font-weight-300"
+                                                placeholder="Choose a date">
+                                    </div>
+                                </div>
+                                <!-- Due date-END-->
+
+                                <!-- Status -->
+                                <div class="row MDC-margin-bottom30">
+                                    <div class="col">
+                                        <input class="with-gap" name="statusRadio" type="radio" id="status-pending" checked />
+                                        <label for="status-pending">Pending</label>
+                                    </div>
+                                    <div class="col">
+                                        <input class="with-gap" name="statusRadio" type="radio" id="status-ok"/>
+                                        <label for="status-ok">Completed</label>
+                                    </div>
+                                    <div class="col">
+                                        <input class="with-gap" name="statusRadio" type="radio" id="status-cancel"/>
+                                        <label for="status-cancel">Cancelled</label>
+                                    </div>
+                                </div>
+                                <!-- Status-END-->
+
+                            </form>
+                            <!-- FORM - END -->
+                        </div>
+                        <!-- CARD CONTAINER - END-->
+                    </div>
+                    <!-- CARD TAB-END-->
+                </div>
+                <button id="salvar" type="submit" class="btn waves-effect waves-light
+                blue MDC-form-text right" name="action">
+                  Save Changes
+                </button>
+                </form>
+                <!--  CHOOSE ICON TAB-END-->
+            </div>
+            <!-- CONTEUDO - END -->
+        </div>
+    </div>
+    <!-- CONTAINER - END -->
+
+</body>
+</html>

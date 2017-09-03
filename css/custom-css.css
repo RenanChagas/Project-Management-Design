@@ -14,6 +14,13 @@
   position: relative;
  }
 
+.MDC-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
  .MDC-center-container-signup{
    display: flex;
    justify-content: center;
@@ -541,6 +548,13 @@ nav ul li a.MDC-navbar-active {
   padding-top: 25px;
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.MDC-project-card-container{
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .MDC-profile-expand-icon-position{
@@ -583,6 +597,18 @@ nav ul li a.MDC-navbar-active {
 
 @media only screen and (max-width: 992px){
   .MDC-page-container{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.MDC-page-container-2{
+  padding-left: 95px !important;
+  padding-right: 95px !important;
+}
+
+@media only screen and (max-width: 992px){
+  .MDC-page-container-2{
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -831,6 +857,10 @@ nav ul li a.MDC-navbar-active {
   position: relative;
 }
 
+.MDC-dashboard-doughtnut-size{
+  width: 200px !important;
+}
+
 
 .MDC-category-floatbtn-position{
   margin-top: -20px;
@@ -960,6 +990,10 @@ nav ul li a.MDC-navbar-active {
 	margin-top: 20px;
 }
 
+.MDC-margin-top40{
+	margin-top: 40px !important;
+}
+
 .MDC-margin-bottom-10{
   margin-bottom: -10px;
 }
@@ -972,8 +1006,21 @@ nav ul li a.MDC-navbar-active {
   width: 80%;
 }
 
+.MDC-margin-right20{
+  margin-right: 20px;
+}
+
+.MDC-margin-left20{
+  margin-left: 20px;
+}
+
+
 .MDC-margin-right40{
   margin-right: 40px;
+}
+
+.MDC-margin-left40{
+  margin-left: 40px;
 }
 
 .MDC-margin-right50{
@@ -990,6 +1037,10 @@ nav ul li a.MDC-navbar-active {
 
 .MDC-margin-left80{
   margin-left: 80px !important;
+}
+
+.MDC-margin-left120{
+  margin-left: 120px !important;
 }
 
 /*-------------------------------------------------*/
@@ -1193,6 +1244,10 @@ nav ul li a.MDC-navbar-active {
   font-size: 15px !important;
 }
 
+.MDC-font-17{
+  font-size: 17px !important;
+}
+
 .MDC-font-18{
   font-size: 18px !important;
 }
@@ -1269,6 +1324,13 @@ nav ul li a.MDC-navbar-active {
   top: 0 !important;
 }
 
+.MDC-modal-halfScreen{
+  width: 50%;
+  height: 50%;
+  max-height: 50% !important;
+  top: 0 !important;
+}
+
 .MDC-modal-close-btn-position{
   margin: 20px;
 }
@@ -1305,4 +1367,16 @@ nav ul li a.MDC-navbar-active {
 
 .MDC-historyTabs-size{
   min-height: 300px !important;
+}
+
+
+.tabs-white .tab-white a:hover, .tabs-white .tab-white a.active {
+  background-color: #fff;
+  color: #2196F3;
+  font-weight: 500;
+}
+
+
+.MDC-projectIcon-radio-position{
+    margin-left: 12px !important;
 }

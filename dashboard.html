@@ -238,14 +238,14 @@
                     borderColor: "#2196F3",
                     data: [15,9,30,32,21],
                     fill: false,
-                    lineTension: 0  
+                    lineTension: 0
                   },
                   {
                     label: "Tasks Ovedue",
                     borderColor: "#e53935",
                     data: [2,6,2,8,14],
                     fill: false,
-                    lineTension: 0  
+                    lineTension: 0
                   },
                   {
                     label: "Tasks On Going",
@@ -253,7 +253,7 @@
                     data: [9,2,7,17,19],
                     fill: false,
                     lineTension: 0
-                  }  
+                  }
                 ]
               },
               "options":{
@@ -279,6 +279,8 @@
 
             </script>
 
+
+
           </div>
         </div>
       </div>
@@ -287,38 +289,66 @@
       <div class="col MDC-padding-0 right">
         <div class="MDC-card MDC-course-card-size">
 
-          <!-- Image -->
-          <a href="#">
-            <div class="row center MDC-margin-top20">
-              <img src="images/temp/man-profile-circle-4.png"
-                class="MDC-avatar-circle-large MDC-shadow-default"/>
-            </div>
-          </a>
-
-          <!-- Title -->
-          <div class="row center MDC-margin-bottom-10">
-            <font class="truncate MDC-font-course-title MDC-color-grey-dark-2">
-                Fulano Beltrano
+          <!-- Task Title -->
+          <div class="row center MDC-margin-top10">
+            <font class="truncate MDC-font-15 MDC-color-grey-dark-2 MDC-font-h1">
+                Task Category
               </font>
           </div>
 
-          <!-- Time Course -->
+          <!-- Image -->
+          <a href="#">
+            <div class="row center MDC-margin-top20">
+
+              <div class="MDC-margin-right20 MDC-margin-left20">
+                  <canvas class="MDC-margin-top20 center" id="chartjs-doughnut" width="10" height="10"></canvas>
+              </div>
+              <script>
+              new Chart(document.getElementById("chartjs-doughnut"), {
+                type: 'doughnut',
+                data: {
+                  labels: ["Documentation", "Programming", "Test"],
+                  datasets: [ {
+                    data: [
+                      40,
+                      20,
+                      10
+                    ],
+                    backgroundColor: [
+                    "#2196F3",
+                    "#2196F3",
+                    "#2196F3",
+                    ],
+                    label: ""
+                  }]
+                },
+                "options":{
+                  "legend": {
+                    display: false,
+                    position: "bottom"
+                  },
+                  animation: {
+                  animateScale: true,
+                  animateRotate: true
+                  }
+                }
+              });
+
+              </script>
+              <!--
+              <img src="images/temp/man-profile-circle-4.png"
+                class="MDC-avatar-circle-large MDC-shadow-default"/> -->
+            </div>
+          </a>
+
+          <!-- Task Description -->
           <div class="row center MDC-margin-bottom-10">
-            <font class="truncate MDC-font-course-title MDC-uppercase-none
-                        MDC-color-grey">
-              Manager
+            <font class="truncate MDC-font-16-2 MDC-color-grey MDC-font-h1
+                        MDC-uppercase-none">
+               Overview
             </font>
           </div>
 
-          <!-- Member Course -->
-          <div class="row MDC-margin-top10 MDC-width-80perc">
-            <div class="MDC-divider"></div>
-            <font class="truncate MDC-font-course-title MDC-uppercase-none
-                        MDC-color-grey-dark-2">
-                Department:
-            </font>
-            <font class="MDC-color-grey">GBS</font>
-          </div>
         <!-- CARD END -->
         </div>
       </div>
